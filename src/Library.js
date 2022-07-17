@@ -7,7 +7,9 @@ import {
     Sprite,
     Container,
     ParticleContainer,
-    Load
+    Loader,
+    Rectangle,
+    AnimatedSprite
 } from 'pixi.js';
 
 // you need to make sure the webpack config copies the files to the target or the below will not work
@@ -47,4 +49,29 @@ export const getText = () => {
     });
     const text = new Text(' text message ', style);
     return text;
+}
+
+export const addAnimatedSprite = (app, options) => {
+    const loader = Loader.shared;
+    loader.add('tileset', options.json);
+
+    loader.load((loader, resources) => {
+        const textures = [];
+
+        for (let i = options.startFrame; i <= options.endFrame; i++) {
+            const texture = Texture.from(`${options.filePrefix}${i}.png`)
+            textures.push(texture);
+        }
+
+        const animatedSprite = new AnimatedSprite(textures);
+
+        animatedSprite.position.set(options.position.x, options.position.y);
+        animatedSprite.scale.set(options.scaleWidth, options.scaleHeight);
+        animatedSprite.animationSpeed = options.speed;
+
+        app.stage.addChild(animatedSprite);
+        animatedSprite.play();
+
+        return animatedSprite();
+    });
 }

@@ -6,7 +6,8 @@ module.exports = {
     devServer: {
         // contentBase: 'dist',
         static: 'dist',
-        port: 3000
+        port: 3000,
+        open: true
     },
     devtool: 'inline-source-map',
     plugins: [
