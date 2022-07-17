@@ -23,15 +23,18 @@ module.exports = {
         })]
     },
     plugins: [
-        new CopyWebpackPlugin([{
-            from: 'build/assets',
-            to: 'assets'
-        }]),
+        new CopyWebpackPlugin(
+            {
+                patterns: [
+                    { from: 'src/favicon.ico', to: 'favicon.ico' },
+
+                    { from: 'src/images', to: 'images' }
+                ]
+            }
+        ),
         new HTMLWebpackPlugin({
-            template: 'build/index.html',
-            filename: 'index.html',
-            hash: true,
-            minify: false
+            template: 'src/index.html',
+            filename: 'index.html'
         })
     ]
 }
