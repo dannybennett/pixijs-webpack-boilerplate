@@ -12,13 +12,8 @@ import {
     AnimatedSprite
 } from 'pixi.js';
 
-// you need to make sure the webpack config copies the files to the target or the below will not work
-export const getSprite = (sprite) => {
-    const char1Texture = Texture.from(sprite);
-    const char1Sprite = new Sprite(char1Texture);
-    return char1Sprite;
-}
 
+// POLYGONS
 export const getPolygon = () => {
     const poly = new Graphics();
     poly.beginFill(0xFF66FF)
@@ -33,8 +28,8 @@ export const getPolygon = () => {
     return poly;
 }
 
+// TEXT
 export const getText = () => {
-    // TEXT
     const style = new TextStyle({
         fontFamily: 'Montserrat',
         fontSize: 48,
@@ -49,6 +44,13 @@ export const getText = () => {
     });
     const text = new Text(' text message ', style);
     return text;
+}
+
+// you need to make sure the webpack config copies the files to the target or the below will not work
+export const getSprite = (sprite) => {
+    const char1Texture = Texture.from(sprite);
+    const char1Sprite = new Sprite(char1Texture);
+    return char1Sprite;
 }
 
 export const addAnimatedSprite = (app, options) => {
@@ -71,7 +73,5 @@ export const addAnimatedSprite = (app, options) => {
 
         app.stage.addChild(animatedSprite);
         animatedSprite.play();
-
-        return animatedSprite();
     });
 }

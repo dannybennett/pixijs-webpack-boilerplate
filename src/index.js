@@ -9,7 +9,8 @@ import {
     ParticleContainer,
     Loader,
     Rectangle,
-    AnimatedSprite
+    AnimatedSprite,
+    TilingSprite
 } from 'pixi.js';
 import { getSprite, getPolygon, getText, addAnimatedSprite } from './Library';
 
@@ -38,4 +39,7 @@ const skeleton = {
     }
 };
 
-const animatedSprite = addAnimatedSprite(app, skeleton);
+addAnimatedSprite(app, skeleton); 
+
+// https://www.youtube.com/watch?v=ajaduDDePIY
+// const clouds = Texture.from('')
