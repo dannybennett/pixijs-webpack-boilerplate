@@ -54,7 +54,7 @@ export const getSprite = (sprite) => {
 }
 
 export const AddAnimatedSprite = (app, loader, options) => {
-    const direction = {
+    const directions = {
         right: "right",
         left: "left",
         up: "up",
@@ -64,7 +64,9 @@ export const AddAnimatedSprite = (app, loader, options) => {
     loader.load((loader, resources) => {
         const textures = [];
 
-        options[direction.right].frames.forEach((f, i) => {
+        let direction = directions.right;
+
+        options[directions.right].frames.forEach((f, i) => {
             textures.push(Texture.from(`${options.filePrefix}${f}.png`));
         })
 
@@ -80,18 +82,20 @@ export const AddAnimatedSprite = (app, loader, options) => {
         // TODO: cycle through movement array when key is down, otherwise stand still
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowRight')
-                animatedSprite.x += options.movementSpeed;
+                direction = directions.right;
             if (e.key === 'ArrowLeft')
-                animatedSprite.x -= options.movementSpeed;
+                direction = directions.left;
             if (e.key === 'ArrowUp')
-                animatedSprite.y -= options.movementSpeed;
+                direction = directions.up;
             if (e.key === 'ArrowDown')
-                animatedSprite.y += options.movementSpeed;
+                direction = directions.down;
         })
 
-        // TICKER
-        app.ticker.add((delta) => {
-            animatedSprite.x += options.movementSpeed;
+        app.ticker.add((d) => {
+            if (animatedSprite.x >= app.screen.width)
+                animatedSprite.x = -30;
+            else
+                animatedSprite.x += options.movementSpeed;
         });
     });
 
