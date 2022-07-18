@@ -1,4 +1,5 @@
 {
+    "tileset": "skeleton",
     "right": {
         "frames": [
             3,
@@ -10,7 +11,8 @@
             9
         ]
     },
-    "speed": 0.12,
+    "animationSpeed": 0.12,
+    "movementSpeed": 0.5,
     "filePrefix": "skeleton-1-",
     "json": "images/skeleton/spritesheet.json",
     "scaleWidth": 1,
