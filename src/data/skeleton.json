@@ -12,11 +12,12 @@
         ]
     },
     "animationSpeed": 0.12,
-    "movementSpeed": 0.5,
-    "filePrefix": "skeleton-1-",
+    "movementSpeed": 0.7,
+    "prefixLeft": "skeleton-l-",
+    "prefixRight": "skeleton-r-",
     "json": "images/skeleton/spritesheet.json",
-    "scaleWidth": 1,
-    "scaleHeight": 1,
+    "scaleWidth": 10,
+    "scaleHeight": 10,
     "position": {
         "x": 0,
         "y": 0

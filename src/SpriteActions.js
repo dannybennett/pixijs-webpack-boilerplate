@@ -67,7 +67,7 @@ export const AddAnimatedSprite = (app, loader, options) => {
         let direction = directions.right;
 
         options[directions.right].frames.forEach((f, i) => {
-            textures.push(Texture.from(`${options.filePrefix}${f}.png`));
+            textures.push(Texture.from(`${options.prefixRight}${f}.png`));
         })
 
         const animatedSprite = new AnimatedSprite(textures);
