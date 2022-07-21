@@ -2,29 +2,26 @@
     "tileset": "skeleton",
     "left": {
         "frames": [
-            3,
-            4,
-            5,
-            6,
-            7,
-            8,
-            9
+            "skeleton-left-unarmed-2.png",
+            "skeleton-left-unarmed-3.png",
+            "skeleton-left-unarmed-4.png",
+            "skeleton-left-unarmed-5.png",
+            "skeleton-left-unarmed-6.png",
+            "skeleton-left-unarmed-7.png"
         ]
     },
     "right": {
         "frames": [
-            12,
-            13,
-            14,
-            15,
-            16,
-            17,
-            18
+            "skeleton-right-unarmed-2.png",
+            "skeleton-right-unarmed-3.png",
+            "skeleton-right-unarmed-4.png",
+            "skeleton-right-unarmed-5.png",
+            "skeleton-right-unarmed-6.png",
+            "skeleton-right-unarmed-7.png"
         ]
     },
     "animationSpeed": 0.12,
     "movementSpeed": 0.7,
-    "prefix": "skeleton-",
     "json": "images/skeleton/spritesheet.json",
     "scaleWidth": 1,
     "scaleHeight": 1,

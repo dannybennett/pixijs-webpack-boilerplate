@@ -57,7 +57,7 @@ export const LoadAnimation = (options, direction, position) => {
     const textures = [];
 
     options[direction].frames.forEach((f, i) => {
-        textures.push(Texture.from(`${options.prefix}${f}.png`));
+        textures.push(Texture.from(`${f}`));
     })
 
     const animatedSprite = new AnimatedSprite(textures);
