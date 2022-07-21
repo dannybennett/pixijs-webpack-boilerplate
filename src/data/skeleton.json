@@ -1,5 +1,16 @@
 {
     "tileset": "skeleton",
+    "left": {
+        "frames": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+        ]
+    },
     "right": {
         "frames": [
             3,
@@ -16,8 +27,8 @@
     "prefixLeft": "skeleton-l-",
     "prefixRight": "skeleton-r-",
     "json": "images/skeleton/spritesheet.json",
-    "scaleWidth": 10,
-    "scaleHeight": 10,
+    "scaleWidth": 1,
+    "scaleHeight": 1,
     "position": {
         "x": 0,
         "y": 0

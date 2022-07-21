@@ -14,7 +14,7 @@ import {
 
 
 // POLYGONS
-export const getPolygon = () => {
+export const CreatePolygon = () => {
     const poly = new Graphics();
     poly.beginFill(0xFF66FF)
         .lineStyle(5, 0xFFEECC)
@@ -29,7 +29,7 @@ export const getPolygon = () => {
 }
 
 // TEXT
-export const getText = () => {
+export const AddText = (message) => {
     const style = new TextStyle({
         fontFamily: 'Montserrat',
         fontSize: 48,
@@ -42,62 +42,29 @@ export const getText = () => {
         dropShadowBlur: 4,
         dropShadowColor: '#000000'
     });
-    const text = new Text(' text message ', style);
+    const text = new Text(message, style);
     return text;
 }
 
 // you need to make sure the webpack config copies the files to the target or the below will not work
-export const getSprite = (sprite) => {
+export const LoadSprite = (sprite) => {
     const char1Texture = Texture.from(sprite);
     const char1Sprite = new Sprite(char1Texture);
     return char1Sprite;
 }
 
-export const AddAnimatedSprite = (app, loader, options) => {
-    const directions = {
-        right: "right",
-        left: "left",
-        up: "up",
-        down: "down"
-    };
+export const LoadAnimation = (options) => {
+    const textures = [];
 
-    loader.load((loader, resources) => {
-        const textures = [];
+    options["right"].frames.forEach((f, i) => {
+        textures.push(Texture.from(`${options.prefixRight}${f}.png`));
+    })
 
-        let direction = directions.right;
+    const animatedSprite = new AnimatedSprite(textures);
 
-        options[directions.right].frames.forEach((f, i) => {
-            textures.push(Texture.from(`${options.prefixRight}${f}.png`));
-        })
+    animatedSprite.position.set(options.position.x, options.position.y);
+    animatedSprite.scale.set(options.scaleWidth, options.scaleHeight);
+    animatedSprite.animationSpeed = options.animationSpeed;
 
-        const animatedSprite = new AnimatedSprite(textures);
-
-        animatedSprite.position.set(options.position.x, options.position.y);
-        animatedSprite.scale.set(options.scaleWidth, options.scaleHeight);
-        animatedSprite.animationSpeed = options.animationSpeed;
-
-        app.stage.addChild(animatedSprite);
-        animatedSprite.play();
-
-        // TODO: cycle through movement array when key is down, otherwise stand still
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight')
-                direction = directions.right;
-            if (e.key === 'ArrowLeft')
-                direction = directions.left;
-            if (e.key === 'ArrowUp')
-                direction = directions.up;
-            if (e.key === 'ArrowDown')
-                direction = directions.down;
-        })
-
-        app.ticker.add((d) => {
-            if (animatedSprite.x >= app.screen.width)
-                animatedSprite.x = -30;
-            else
-                animatedSprite.x += options.movementSpeed;
-        });
-    });
-
-
+    return animatedSprite;
 }

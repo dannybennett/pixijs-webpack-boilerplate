@@ -1,0 +1,22 @@
+{
+    "tileset": "skeleton",
+    "right": {
+        "frames": [
+            1,
+            2,
+            3,
+            4
+        ]
+    },
+    "animationSpeed": 0.12,
+    "movementSpeed": 0.7,
+    "prefixLeft": "ext-skeleton-",
+    "prefixRight": "ext-skeleton-",
+    "json": "images/ext-skeleton/spritesheet.json",
+    "scaleWidth": 3,
+    "scaleHeight": 3,
+    "position": {
+        "x": 0,
+        "y": 0
+    }
+}
