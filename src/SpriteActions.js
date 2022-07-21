@@ -53,18 +53,19 @@ export const LoadSprite = (sprite) => {
     return char1Sprite;
 }
 
-export const LoadAnimation = (options) => {
+export const LoadAnimation = (options, direction, position) => {
     const textures = [];
 
-    options["right"].frames.forEach((f, i) => {
-        textures.push(Texture.from(`${options.prefixRight}${f}.png`));
+    options[direction].frames.forEach((f, i) => {
+        textures.push(Texture.from(`${options.prefix}${f}.png`));
     })
 
     const animatedSprite = new AnimatedSprite(textures);
 
-    animatedSprite.position.set(options.position.x, options.position.y);
+    animatedSprite.position.set(position.x, position.y);
     animatedSprite.scale.set(options.scaleWidth, options.scaleHeight);
     animatedSprite.animationSpeed = options.animationSpeed;
 
+    animatedSprite.play();
     return animatedSprite;
 }

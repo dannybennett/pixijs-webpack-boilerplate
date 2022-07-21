@@ -1,6 +1,6 @@
 {
 	"frames": {
-		"skeleton-l-1.png": {
+		"skeleton-1.png": {
 			"frame": {
 				"x": 1,
 				"y": 1,
@@ -20,7 +20,7 @@
 				"h": 72
 			}
 		},
-		"skeleton-l-2.png": {
+		"skeleton-2.png": {
 			"frame": {
 				"x": 57,
 				"y": 1,
@@ -40,7 +40,7 @@
 				"h": 72
 			}
 		},
-		"skeleton-l-3.png": {
+		"skeleton-3.png": {
 			"frame": {
 				"x": 113,
 				"y": 1,
@@ -60,7 +60,7 @@
 				"h": 72
 			}
 		},
-		"skeleton-l-4.png": {
+		"skeleton-4.png": {
 			"frame": {
 				"x": 169,
 				"y": 1,
@@ -80,7 +80,7 @@
 				"h": 72
 			}
 		},
-		"skeleton-l-5.png": {
+		"skeleton-5.png": {
 			"frame": {
 				"x": 1,
 				"y": 75,
@@ -100,7 +100,7 @@
 				"h": 72
 			}
 		},
-		"skeleton-l-6.png": {
+		"skeleton-6.png": {
 			"frame": {
 				"x": 57,
 				"y": 75,
@@ -120,7 +120,7 @@
 				"h": 72
 			}
 		},
-		"skeleton-l-7.png": {
+		"skeleton-7.png": {
 			"frame": {
 				"x": 113,
 				"y": 75,
@@ -140,7 +140,7 @@
 				"h": 72
 			}
 		},
-		"skeleton-l-8.png": {
+		"skeleton-8.png": {
 			"frame": {
 				"x": 169,
 				"y": 75,
@@ -160,7 +160,7 @@
 				"h": 72
 			}
 		},
-		"skeleton-l-9.png": {
+		"skeleton-9.png": {
 			"frame": {
 				"x": 1,
 				"y": 149,
@@ -180,7 +180,7 @@
 				"h": 72
 			}
 		},
-		"skeleton-r-1.png": {
+		"skeleton-10.png": {
 			"frame": {
 				"x": 57,
 				"y": 149,
@@ -200,7 +200,7 @@
 				"h": 72
 			}
 		},
-		"skeleton-r-2.png": {
+		"skeleton-11.png": {
 			"frame": {
 				"x": 107,
 				"y": 149,
@@ -220,7 +220,7 @@
 				"h": 72
 			}
 		},
-		"skeleton-r-3.png": {
+		"skeleton-12.png": {
 			"frame": {
 				"x": 157,
 				"y": 149,
@@ -240,7 +240,7 @@
 				"h": 72
 			}
 		},
-		"skeleton-r-4.png": {
+		"skeleton-13.png": {
 			"frame": {
 				"x": 207,
 				"y": 149,
@@ -260,7 +260,7 @@
 				"h": 72
 			}
 		},
-		"skeleton-r-5.png": {
+		"skeleton-14.png": {
 			"frame": {
 				"x": 225,
 				"y": 1,
@@ -280,7 +280,7 @@
 				"h": 72
 			}
 		},
-		"skeleton-r-6.png": {
+		"skeleton-15.png": {
 			"frame": {
 				"x": 225,
 				"y": 75,
@@ -300,7 +300,7 @@
 				"h": 72
 			}
 		},
-		"skeleton-r-7.png": {
+		"skeleton-16.png": {
 			"frame": {
 				"x": 263,
 				"y": 149,
@@ -320,7 +320,7 @@
 				"h": 72
 			}
 		},
-		"skeleton-r-8.png": {
+		"skeleton-17.png": {
 			"frame": {
 				"x": 1,
 				"y": 223,
@@ -340,7 +340,7 @@
 				"h": 72
 			}
 		},
-		"skeleton-r-9.png": {
+		"skeleton-18.png": {
 			"frame": {
 				"x": 57,
 				"y": 223,

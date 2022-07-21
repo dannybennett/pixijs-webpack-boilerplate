@@ -34,7 +34,8 @@ const directions = {
 
 // use as a container for sprites
 const sprites = {};
-
+const position = { x: 0, y: 0 };
+let direction = directions.right;
 app.renderer.backgroundColor = 0x23395D;
 app.renderer.view.style.position = 'absolute';
 document.body.appendChild(app.view)
@@ -46,21 +47,33 @@ const loader = Loader.shared;
 loader.add(skeleton.tileset, skeleton.json);
 
 loader.load((loader, resources) => {
-    sprites.animatedSprite = LoadAnimation(skeleton);
+
+    sprites.animatedSprite = LoadAnimation(skeleton, direction, position);
 });
 
 loader.onComplete.add(() => {
     app.stage.addChild(sprites.animatedSprite);
-    sprites.animatedSprite.play();
 
     app.ticker.add((d) => {
-        if (sprites.animatedSprite.x >= app.screen.width)
-            // true;
-            sprites.animatedSprite.x = -30;
-        else
-            sprites.animatedSprite.x += skeleton.movementSpeed;
-    });
+        // console.log(sprites.animatedSprite.x);
+        // console.log(app.screen.width);
 
+        if (sprites.animatedSprite.x < 0) {
+            direction = directions.right;
+            app.stage.removeChild(sprites.animatedSprite);
+            sprites.animatedSprite = LoadAnimation(skeleton, direction, { x: 0, y: 0 });
+            app.stage.addChild(sprites.animatedSprite);
+        } else if (sprites.animatedSprite.x >= app.screen.width) {
+            direction = directions.left;
+            app.stage.removeChild(sprites.animatedSprite);
+            sprites.animatedSprite = LoadAnimation(skeleton, direction, { x: app.screen.width - 1, y: 0 });
+            app.stage.addChild(sprites.animatedSprite);
+        }
+        else if (direction == directions.right)
+            sprites.animatedSprite.x += skeleton.movementSpeed;
+        else if (direction == directions.left)
+            sprites.animatedSprite.x -= skeleton.movementSpeed;
+    });
 });
 
 
