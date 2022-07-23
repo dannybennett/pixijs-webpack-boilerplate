@@ -15,6 +15,9 @@ import {
 
 import { CreatePolygon, AddText, LoadSprite, LoadAnimation } from './SpriteActions';
 
+// tiledmap loader for pixijs - https://github.com/riebel/pixi-tiledmap
+// tiledmap converter for pixijs - https://github.com/Reynau/tiled-to-pixi
+
 import skeleton from './data/skeleton.json';
 import extskeleton from './data/ext-skeleton.json';
 
